@@ -48,7 +48,8 @@ HAVING NoOfProducts_Supplied > 1
 ) as sp
 on s.supp_id = sp.supp_id;
 
-#### 7) Find the least expensive product from each category and print the table with category id, name, product name and price of the product
+#### 7) Find the least expensive product from each category and print the table with 
+####    category id, name, product name and price of the product
 select c.cat_name, min(o.ORD_AMOUNT) from `order` o
 	inner join supplier_pricing sp
     inner join product p
@@ -68,3 +69,6 @@ group by p.pro_id;
 SELECT * FROM CUSTOMER;
 SELECT CUS_NAME, CUS_GENDER FROM CUSTOMER 
 WHERE (CUS_NAME LIKE 'A%' OR CUS_NAME LIKE '%A');
+
+#### 10)
+call ECOMMERCE.supplier_rating();
